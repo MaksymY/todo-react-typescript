@@ -11,6 +11,7 @@ const InputTodo = styled.input`
   background: none;
   border-bottom: 1px solid white;
   margin: 20px 0;
+  color: white;
 
   &::placeholder {
     color: white;
