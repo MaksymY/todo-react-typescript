@@ -4,6 +4,11 @@ import styled from "styled-components";
 const Item = styled.li`
   list-style-type: none;
   padding: 5px;
+  color: white;
+`;
+
+const Checkbox = styled.input`
+  margin-right: 10px;
 `;
 
 interface TodoListItemProps {
@@ -17,7 +22,7 @@ export const TodoListItem = ({ todo, toggleTodo }: TodoListItemProps) => {
       <label
         style={{ textDecoration: todo.complete ? "line-through" : "none" }}
       >
-        <input
+        <Checkbox
           type="checkbox"
           checked={todo.complete}
           onChange={() => toggleTodo(todo)}

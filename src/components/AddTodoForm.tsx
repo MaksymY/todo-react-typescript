@@ -8,8 +8,13 @@ const InputTodo = styled.input`
   outline: none;
   display: block;
   border: none;
-  border-bottom: 1px solid grey;
+  background: none;
+  border-bottom: 1px solid white;
   margin: 20px 0;
+
+  &::placeholder {
+    color: white;
+  }
 `;
 
 const Add = styled.button`

@@ -12,6 +12,7 @@ const Content = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #222222;
 `;
 
 const Title = styled.h1`
