@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { TodoListItem } from "./components/TodoListItem";
 import "./App.css";
+import { TodoList } from "./components/TodoList";
 
 const initialTodos: Array<Todo> = [
   { text: "walk the dog", complete: true },
@@ -24,11 +24,10 @@ function App() {
   };
 
   return (
-    <div>
+    <>
       <h1>Hello World</h1>
-      <TodoListItem todo={todos[0]} toggleTodo={toggleTodo} />
-      <TodoListItem todo={todos[1]} toggleTodo={toggleTodo} />
-    </div>
+      <TodoList todos={todos} toggleTodo={toggleTodo} />
+    </>
   );
 }
 

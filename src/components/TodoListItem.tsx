@@ -7,19 +7,17 @@ interface TodoListItemProps {
 
 export const TodoListItem = ({ todo, toggleTodo }: TodoListItemProps) => {
   return (
-    <div>
-      <li>
-        <label
-          style={{ textDecoration: todo.complete ? "line-through" : "none" }}
-        >
-          <input
-            type="checkbox"
-            checked={todo.complete}
-            onChange={() => toggleTodo(todo)}
-          />
-          {todo.text}
-        </label>
-      </li>
-    </div>
+    <li>
+      <label
+        style={{ textDecoration: todo.complete ? "line-through" : "none" }}
+      >
+        <input
+          type="checkbox"
+          checked={todo.complete}
+          onChange={() => toggleTodo(todo)}
+        />
+        {todo.text}
+      </label>
+    </li>
   );
 };
