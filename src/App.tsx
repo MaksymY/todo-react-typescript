@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import { TodoList } from "./components/TodoList";
+import { AddTodoForm } from "./components/AddTodoForm";
 
 const initialTodos: Array<Todo> = [
   { text: "walk the dog", complete: true },
@@ -23,10 +24,15 @@ function App() {
     setTodos(newTodos);
   };
 
+  const addTodo: AddTodo = (newTodo) => {
+    setTodos([...todos, { text: newTodo, complete: false }]);
+  };
+
   return (
     <>
       <h1>Hello World</h1>
       <TodoList todos={todos} toggleTodo={toggleTodo} />
+      <AddTodoForm addTodo={addTodo} />
     </>
   );
 }
