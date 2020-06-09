@@ -1,4 +1,10 @@
 import React from "react";
+import styled from "styled-components";
+
+const Item = styled.li`
+  list-style-type: none;
+  padding: 5px;
+`;
 
 interface TodoListItemProps {
   todo: Todo;
@@ -7,7 +13,7 @@ interface TodoListItemProps {
 
 export const TodoListItem = ({ todo, toggleTodo }: TodoListItemProps) => {
   return (
-    <li>
+    <Item>
       <label
         style={{ textDecoration: todo.complete ? "line-through" : "none" }}
       >
@@ -18,6 +24,6 @@ export const TodoListItem = ({ todo, toggleTodo }: TodoListItemProps) => {
         />
         {todo.text}
       </label>
-    </li>
+    </Item>
   );
 };

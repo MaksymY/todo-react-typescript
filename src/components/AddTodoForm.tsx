@@ -1,4 +1,30 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
+import styled from "styled-components";
+
+const NewContent = styled.form`
+  text-align: center;
+`;
+const InputTodo = styled.input`
+  outline: none;
+  display: block;
+  border: none;
+  border-bottom: 1px solid grey;
+  margin: 20px 0;
+`;
+
+const Add = styled.button`
+  background-color: #ff5154;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  transition: 0.2s;
+  outline: none;
+
+  &:hover {
+    box-shadow: 0 0 20px -1px rgb(255, 81, 84);
+  }
+`;
 
 interface AddTodoFormProps {
   addTodo: AddTodo;
@@ -13,16 +39,21 @@ export const AddTodoForm = ({ addTodo }: AddTodoFormProps) => {
 
   const handleSubmit = (e: FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    addTodo(newTodo);
+    if (newTodo !== "") addTodo(newTodo);
     setNewTodo("");
   };
 
   return (
-    <form>
-      <input type="text" value={newTodo} onChange={handleChange} />
-      <button type="submit" onClick={handleSubmit}>
+    <NewContent>
+      <InputTodo
+        placeholder="Write her !"
+        type="text"
+        value={newTodo}
+        onChange={handleChange}
+      />
+      <Add type="submit" onClick={handleSubmit}>
         Add Todo
-      </button>
-    </form>
+      </Add>
+    </NewContent>
   );
 };
